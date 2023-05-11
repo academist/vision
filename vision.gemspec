@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Vision::VERSION
   spec.authors     = ["ken1flan"]
   spec.email       = ["ken1flan@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Vision."
-  spec.description = "TODO: Description of Vision."
+  spec.homepage    = "https://github.com/academist/vision"
+  spec.summary     = "Summary of Vision."
+  spec.description = "Description of Vision."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
