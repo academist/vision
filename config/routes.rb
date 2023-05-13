@@ -1,3 +1,3 @@
 Vision::Engine.routes.draw do
-  resources :researchers
+  get '/researchers', to: 'researchers#index'
 end
