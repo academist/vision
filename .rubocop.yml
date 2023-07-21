@@ -28,6 +28,7 @@ AllCops:
     - lib/tasks/*
     - vision.gemspec
     - Gemfile
+    - Rakefile
     - features/**/*
     - spec/dummy/bin/*
     - spec/dummy/config/*
@@ -35,7 +36,13 @@ AllCops:
     - spec/dummy/db/migrate/*
     - spec/dummy/config/**/*
     - spec/dummy/lib/tasks/*
+    - spec/dummy/Rakefile
+
+Style/Documentation:
+  Enabled: false
 
 RSpec/ContextWording:
   AllowedPatterns:
     - とき$
+
+

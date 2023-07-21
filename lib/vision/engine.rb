@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vision
   class Engine < ::Rails::Engine
     isolate_namespace Vision
