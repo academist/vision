@@ -1,0 +1,9 @@
+require 'rails_helper'
+
+RSpec.describe 'Vision::Researchers', type: :request do
+  describe 'GET /vision/researchers' do
+    before { get researchers_path }
+
+    it { expect(response).to have_http_status(:ok) }
+  end
+end
