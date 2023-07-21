@@ -15,6 +15,8 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 group :development, :test do
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'puma'
   gem 'rspec-rails', '~> 5.0'
   gem 'sqlite3'
