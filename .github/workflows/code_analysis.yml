@@ -18,6 +18,8 @@ jobs:
         run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
       - name: Run rubocop
         run: bundle exec rubocop
+      - name: Run haml-lint
+        run: bundle exec haml-lint
   rspec:
     name: rspec
     runs-on: ubuntu-latest
