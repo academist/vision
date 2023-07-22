@@ -20,6 +20,8 @@ jobs:
         run: bundle exec rubocop
       - name: Run haml-lint
         run: bundle exec haml-lint
+      - name: Run brakeman
+        run: bundle exec brakeman
   rspec:
     name: rspec
     runs-on: ubuntu-latest

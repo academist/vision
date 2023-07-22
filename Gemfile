@@ -15,6 +15,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 group :development, :test do
+  gem 'brakeman', require: false
   gem 'haml_lint', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
