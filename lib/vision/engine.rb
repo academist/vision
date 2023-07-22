@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'haml'
+
 module Vision
   class Engine < ::Rails::Engine
     isolate_namespace Vision
