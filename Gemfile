@@ -20,6 +20,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'puma'
+  gem 'reek', require: false
   gem 'rspec-rails', '~> 5.0'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false

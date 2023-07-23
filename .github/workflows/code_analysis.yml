@@ -22,6 +22,8 @@ jobs:
         run: bundle exec haml-lint
       - name: Run brakeman
         run: bundle exec brakeman
+      - name: Run reek
+        run: bundle exec reek
   rspec:
     name: rspec
     runs-on: ubuntu-latest
