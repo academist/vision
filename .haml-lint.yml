@@ -1,0 +1,7 @@
+exclude:
+  - 'vendor/**/*'
+  - 'spec/**/*'
+
+linters:
+  LineLength:
+    max: 140

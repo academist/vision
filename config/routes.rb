@@ -1,3 +1,3 @@
 Vision::Engine.routes.draw do
-  resources :researchers
+  resources :researchers, only: :index
 end

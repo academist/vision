@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 module Vision
   class ResearchersController < ApplicationController
-    def index
-      # TODO
-    end
+    def index; end
   end
 end

@@ -1,0 +1,43 @@
+name: build
+on: [pull_request]
+jobs:
+  code_analysis:
+    name: code_analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - name: cache vendor/bundle
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+      - name: bundle install
+        run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - name: Run rubocop
+        run: bundle exec rubocop
+      - name: Run haml-lint
+        run: bundle exec haml-lint
+      - name: Run brakeman
+        run: bundle exec brakeman
+      - name: Run reek
+        run: bundle exec reek
+  rspec:
+    name: rspec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - name: cache vendor/bundle
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+      - name: bundle install
+        run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - name: Run rubocop
+        run: bundle exec rspec
