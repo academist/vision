@@ -2,6 +2,7 @@
 
 module Vision
   class Profile < ApplicationRecord
+    mount_uploader :image, ImageUploader
     belongs_to :user
     include SnsLinkable
     has_many :affiliations, class_name: 'Vision::Affiliation', dependent: :destroy

@@ -14,6 +14,8 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'carrierwave'
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'haml_lint', require: false
@@ -26,4 +28,6 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'sqlite3'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
