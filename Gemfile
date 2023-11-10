@@ -14,6 +14,8 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'carrierwave'
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'haml_lint', require: false
