@@ -14,6 +14,9 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'carrierwave'
+gem 'bootstrap', '~> 4.4.1'
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'haml_lint', require: false
@@ -28,9 +31,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem "sassc-rails"
-  gem 'carrierwave'
-  gem 'bootstrap', '~> 4.4.1'
 end
 
 group :test do
