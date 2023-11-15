@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :vision_profile, class: 'Vision::Profile' do
-    user { create(:user) }
+    user factory: %i[user]
     name { Faker::Artist.name }
     name_en { Faker::Artist.name }
     vision { Faker::Lorem.paragraph(sentence_count: 40) }
