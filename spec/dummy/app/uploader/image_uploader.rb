@@ -15,10 +15,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
-  #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-  #
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    #   # For Rails 3.1+ asset pipeline compatibility:
+    #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+    #
+    #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
     'https://s3-ap-northeast-1.amazonaws.com/academist-app-production/default_image.png'
   end
 
@@ -39,7 +39,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def extension_allowlist
   #   %w(jpg jpeg gif png)
   # end
-  def extension_whitelist # 拡張子の制限
+  def extension_whitelist
     %w[jpg jpeg gif png]
   end
 
