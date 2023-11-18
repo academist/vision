@@ -1,0 +1,50 @@
+%section
+  %nav.navbar.navbar-light.bg-light
+    %a.navbar-brand{href: '#'} Dummy Project
+
+%section
+  = render 'vision_engine'
+
+%section
+  .container.mt-5
+    .text-center
+      %p.font-weight-bold プロジェクト
+    .row
+      .col-md-4
+        .card
+          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+          .card-body
+            %h5.card-title カード1
+            %p.card-text これはカード1のテキストです。
+      .col-md-4
+        .card
+          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+          .card-body
+            %h5.card-title カード2
+            %p.card-text これはカード2のテキストです。
+      .col-md-4
+        .card
+          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+          .card-body
+            %h5.card-title カード3
+            %p.card-text これはカード3のテキストです.
+%section
+  %footer.bg-light.text-center.text-lg-start
+    .container.p-4
+      .row
+        .col-lg-6.col-md-12.mb-4.mb-md-0
+          %h5.text-uppercase Footer text
+          %p
+            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+            | molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+            | aliquam voluptatem veniam, est atque cumque eum delectus sint!
+        .col-lg-6.col-md-12.mb-4.mb-md-0
+          %h5.text-uppercase Footer text
+          %p
+            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+            | molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+            | aliquam voluptatem veniam, est atque cumque eum delectus sint!
+    .text-center.p-3{style: 'background-color: rgba(0, 0, 0, 0.2);'}
+      | © 2023 Copyright:
+      %a.text-dark{href: 'https://academist-cf.com/'} academist-cf.com
+
