@@ -53,7 +53,7 @@ FactoryBot.define do
     end
 
     trait :unpublished do
-      published { true }
+      published { false }
     end
   end
 end
