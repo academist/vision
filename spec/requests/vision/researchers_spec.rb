@@ -24,19 +24,28 @@ RSpec.describe 'Vision::Researchers' do
         get_researcher_path
       end
 
-      it do
-        expect(response).to have_http_status(:ok)
+      it { expect(response).to have_http_status(:ok) }
+    end
+
+    context 'when vision profile is available, published: false' do
+      let(:user) { user_with_vision_profile }
+      let(:vision_profile) { create(:vision_profile, :unpublished, user: user) }
+
+      before do
+        vision_profile
+        get_researcher_path
       end
+
+      it { expect(response).to have_http_status(:redirect) }
     end
 
     context 'when vision profile is not available' do
       let(:user) { user_without_vision_profile }
+      let(:vision_profile) { create(:vision_profile, user: user) }
 
       before { get_researcher_path }
 
-      it do
-        expect(response).to have_http_status(:redirect)
-      end
+      it { expect(response).to have_http_status(:redirect) }
     end
   end
 end
