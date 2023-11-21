@@ -3,31 +3,31 @@
     .col-md-8.text-center.mt-3
       - options = 'width: 168px; height: 168px; object-fit: cover;'
       .center-image
-        = image_tag @profile.image_url, class: 'rounded-circle img-fluid', style: options
+        = image_tag profile.image_url, class: 'rounded-circle img-fluid', style: options
 
     .col-md-4.profile-details
-      %p.display-4= @profile.name
+      %p.display-4= profile.name
 
-      - if @profile.affiliations.any?
+      - if profile.affiliations.any?
         .affiliation.mb-3
-          %p.font-weight-bold 所属
+          %p.font-weight-bold= Vision::Affiliation.model_name.human
           %ul
-            - @profile.affiliations.each do |affiliation|
-              %li= "#{[affiliation.organization_name, affiliation.department_name].join(" ")}"
+            - profile.affiliations.each do |affiliation|
+              %li "#{[affiliation.organization_name, affiliation.department_name].join(' ')}"
 
-      - if @profile.research_fields.any?
+      - if profile.research_fields.any?
         .research-field.mb-3
-          %p.font-weight-bold 研究分野
-          - @profile.research_fields.each do |research_field|
+          %p.font-weight-bold= Vision::ResearchField.model_name.human
+          - profile.research_fields.each do |research_field|
             .badge.badge-secondary= research_field.name
 
-      - if @profile.research_keywords.any?
+      - if profile.research_keywords.any?
         .research-keyword.mb-3
-          %p.font-weight-bold 研究キーワード
-          - @profile.research_keywords.each do |research_keyword|
+          %p.font-weight-bold= Vision::ResearchKeyword.model_name.human
+          - profile.research_keywords.each do |research_keyword|
             .badge.badge-secondary= research_keyword.name
 
   %section.row
     .col.text-center
-      %p.font-weight-bold 研究のvision
-      .lead= @profile.vision
+      %p.font-weight-bold= Vision::Profile.human_attribute_name(:vision)
+      .lead= profile.vision
