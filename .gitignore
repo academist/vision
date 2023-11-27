@@ -7,6 +7,8 @@ spec/dummy/db/*.sqlite3-*
 spec/dummy/log/*.log
 spec/dummy/storage/
 spec/dummy/tmp/
+spec/dummy/public/uploads*
+.idea
 
 Gemfile.lock
 vendor
