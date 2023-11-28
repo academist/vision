@@ -6,11 +6,10 @@
 user1 = FactoryBot.create(:user)
 
 # vision_profile有り、published: false
-user2 = FactoryBot.create(:user, :unpublished)
+user2 = FactoryBot.create(:user)
 
 FactoryBot.create(
   :vision_profile,
-  :unpublished,
   :with_affiliation,
   :with_research_field,
   :with_research_keyword,
@@ -20,6 +19,7 @@ FactoryBot.create(
 
 FactoryBot.create(
   :vision_profile,
+  :with_affiliation,
   :unpublished,
   :with_research_field,
   :with_research_keyword,
