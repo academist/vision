@@ -10,6 +10,7 @@ FactoryBot.create(
   :with_research_field,
   :with_research_keyword,
   :with_research_publication_link,
+  :with_sns_link,
   user: published_user
 )
 
