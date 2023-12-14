@@ -11,7 +11,11 @@ module Vision
     private
 
     def profile
-      @profile ||= ::Vision::Profile.find_by(user_id: params[:user_id])
+      @profile ||= user.vision_profile
+    end
+
+    def user
+      @user ||= User.find(params[:id])
     end
   end
 end
