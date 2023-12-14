@@ -9,7 +9,7 @@ RSpec.describe 'Vision::Researchers' do
     it { expect(response).to have_http_status(:ok) }
   end
 
-  describe 'GET /vision/researchers/:user_id' do
+  describe 'GET /vision/researchers/:id' do
     subject(:get_researcher_path) { get researcher_path(user) }
 
     let!(:user_with_vision_profile) { create(:user) }
