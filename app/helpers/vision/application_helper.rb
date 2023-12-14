@@ -8,6 +8,7 @@ module Vision
       end
     end
 
+    # rubocop:disable Metrics/MethodLength
     def sns_icon_class(sns_link)
       sns_icons = {
         twitter: 'fab fa-twitter',
@@ -22,5 +23,6 @@ module Vision
       }
       sns_icons[sns_link.link_type.to_sym]
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end
