@@ -19,7 +19,7 @@
           %p.font-weight-bold= Vision::Affiliation.model_name.human
           %ul
             - profile.affiliations.each do |affiliation|
-              %li= "#{[affiliation.organization_name, affiliation.department_name].join(" ")}"
+              %li= [affiliation.organization_name, affiliation.department_name].join(' ')
 
       - if profile.research_fields.any?
         .research-field.mb-3
