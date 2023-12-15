@@ -1,3 +1,3 @@
-Vision.setup do |config|
-  config.your_config_var = "nyan cat"
+Vision.configure do |config|
+  config.researcher_not_found_redirect_path = '/'
 end
