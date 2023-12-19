@@ -5,7 +5,7 @@ module Vision
     def index; end
 
     def show
-      redirect_to researchers_path, status: :not_found unless profile&.published?
+      raise ActionController::RoutingError, 'Not Found' unless profile&.published?
     end
 
     private
