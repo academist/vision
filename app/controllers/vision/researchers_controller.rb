@@ -5,7 +5,7 @@ module Vision
     def index; end
 
     def show
-      redirect_to researchers_path unless profile&.published?
+      redirect_to researchers_path, status: :not_found unless profile&.published?
     end
 
     private
