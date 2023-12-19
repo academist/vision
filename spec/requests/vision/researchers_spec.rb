@@ -43,9 +43,11 @@ RSpec.describe 'Vision::Researchers' do
       let(:user) { user_without_vision_profile }
       let(:vision_profile) { create(:vision_profile, user: user) }
 
-      before { get_researcher_path }
-
-      it { expect(response).to have_http_status(:redirect) }
+      it 'raises ActionController::RoutingError' do
+        expect do
+          get_researcher_path
+        end.to raise_error(ActionController::RoutingError, 'Not Found')
+      end
     end
   end
 end
