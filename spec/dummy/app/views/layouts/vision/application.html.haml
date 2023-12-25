@@ -1,12 +1,97 @@
 !!!
-%html
+%html{ lang: 'ja' }
   %head
-    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
-    %meta{content: 'width=device-width', 'initial-scale': 1, 'shrink-to-fit': 'no', name: 'viewport' }
-    %title Dummy
+    %meta{ :content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
+    %title Vision
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
-  %body
-    = yield
+  %body#index
+    %section.text-white.bg-dark
+      .container.py-1
+        .row.no-gutters
+          .col-12.col-lg-8.my-auto
+            %small
+              Demo サイト
+              %span.text-nowrap 「Demo Appサイト）」
+          .col-1.d-none.d-lg-block.text-center.small.my-auto
+            %strong JP
+            |
+            %a{ href: '/?lang=en' } EN
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-white.py-0.border-bottom
+      .container
+        %a.navbar-brand.py-3{ href: '/?lang=ja' }
+          %img#logo{ height: '35', src: '/assets/demo_title.png' }
+        %button.navbar-toggler{ 'aria-controls': 'navbarSupportedContent',
+                                'aria-expanded': 'false',
+                                'data-target': '#navi-content',
+                                'data-toggle': 'collapse',
+                                type: 'button' }
+          %span.navbar-toggler-icon
+        .collapse.navbar-collapse#navi-content
+          %ul.navbar-nav.ml-auto
+            %li.nav-item.border-left.px-0.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ href: '/' } ナビメニューA
+            %li.nav-item.border-left.px-0.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ href: '/' } ナビメニューB
+            %li.nav-item.border-left.px-0.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ href: '/' } ナビメニューC
+            %li.nav-item.active.border-left.px-0.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ href: '/' } ナビメニューD
+            %li.nav-item.border-left.px-0.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ href: '/' }
+                %img.rounded-circle{ _alt: 'icon', height: '25', src: '/assets/default_user_icon.png', width: '25' }/
+            %li.nav-item.border-left.border-right.px-2.py-xl-3.d-none.d-lg-block
+              %a.nav-link{ 'data-method': 'delete', href: '/', rel: 'nofollow' } ログアウト
+    %section.bg-gray-100
+      %section.container.py-3
+        %section.row
+          / sidebar
+          %section.d-none.d-lg-block.col-lg-3.px-4
+            %section.container-fluid.px-0.pt-4.bg-white
+              %a.row.justify-content-center.text-center{ href: '/' }
+                %img.rounded-image{ src: '/assets/small_default_user_icon.png' }/
+                %p.col-10.py-1
+                  madao
+              %section
+                %ul.list-group.list-group-flush
+                %ul.list-group.list-group-flush
+                  %li.list-group-item.text-truncate.bg-primary.text-white メニュー
+                  %li.list-group-item
+                    %a{ href: '/' } メニューA
+                  %li.list-group-item
+                    %a{ href: '/' } メニューB
+                  %li.list-group-item
+                    %a{ href: '/' } メニューC
+                  %li.list-group-item
+                    %a{ href: '/' } メニューD
+          / content
+          %section.col-lg-9.col-12.bg-white.p-3.p-lg-4
+            = yield
+    %section.footer.bg-white.py-3
+      .container
+        .row.my-4.text-center
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } 特商法に基づく表記
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } 利用規約
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } ガイドライン
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } プライバシーポリシー
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } お問合せ
+          .col-sm.border-right
+            %small
+              %a{ href: '/' } プレスリリース
+          .col-sm
+            %small
+              %a{ href: '/' } 運営会社
+    %section.bg-light.py-3.text-center.text-muted
+      %small Copyright © demo, Inc. All rights Reserved.
