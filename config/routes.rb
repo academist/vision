@@ -1,5 +1,5 @@
 Vision::Engine.routes.draw do
-  resources :researchers, only: :index, param: :user_id do
+  resources :researchers, only: :index do
     member do
       get :show
     end

@@ -5,13 +5,17 @@ module Vision
     def index; end
 
     def show
-      redirect_to researchers_path unless profile&.published?
+      raise ActionController::RoutingError, 'Not Found' unless profile&.published?
     end
 
     private
 
     def profile
-      @profile ||= ::Vision::Profile.find_by(user_id: params[:user_id])
+      @profile ||= user.vision_profile
+    end
+
+    def user
+      @user ||= User.find(params[:id])
     end
   end
 end
