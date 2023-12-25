@@ -1,0 +1,45 @@
+.container.profile-container
+  %section.row
+    .col-md-8.text-center.mt-3
+      - options = 'width: 168px; height: 168px; object-fit: cover;'
+      .center-image
+        = image_tag profile.image_url, class: 'rounded-circle img-fluid', style: options
+      .center-sns
+        .container.mt-5
+          .sns_link.mb-3
+            - if profile.sns_links.any?
+              - profile.sns_links.each do |sns_link|
+                = sns_link_tag(sns_link)
+
+    .col-md-4.profile-details
+      %p.display-4= profile.name
+
+      - if profile.affiliations.any?
+        .affiliation.mb-3
+          %p.font-weight-bold= Vision::Affiliation.model_name.human
+          %ul
+            - profile.affiliations.each do |affiliation|
+              %li= [affiliation.organization_name, affiliation.department_name].join(' ')
+
+      - if profile.research_fields.any?
+        .research-field.mb-3
+          %p.font-weight-bold= Vision::ResearchField.model_name.human
+          - profile.research_fields.each do |research_field|
+            .badge.badge-secondary= research_field.name
+
+      - if profile.research_keywords.any?
+        .research-keyword.mb-3
+          %p.font-weight-bold= Vision::ResearchKeyword.model_name.human
+          - profile.research_keywords.each do |research_keyword|
+            .badge.badge-secondary= research_keyword.name
+
+      - if profile.research_publication_links.any?
+        .research-keyword.mb-3
+          %p.font-weight-bold= Vision::ResearchPublicationLink.model_name.human
+          - profile.research_publication_links.each do |research_publication_link|
+            = link_to research_publication_link.url, '', class: 'text-dark text-decoration-none mb-2'
+
+  %section.row
+    .col.text-center
+      %p.font-weight-bold= Vision::Profile.human_attribute_name(:vision)
+      .lead= profile.vision

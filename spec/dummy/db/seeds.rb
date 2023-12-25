@@ -4,13 +4,13 @@
 
 # vision_profile有, published: true
 published_user = FactoryBot.create(:user)
-
 FactoryBot.create(
   :vision_profile,
   :with_affiliation,
   :with_research_field,
   :with_research_keyword,
   :with_research_publication_link,
+  :with_sns_link,
   user: published_user
 )
 

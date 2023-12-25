@@ -16,6 +16,7 @@ gemspec
 
 gem 'carrierwave'
 gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'brakeman', require: false
