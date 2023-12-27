@@ -1,26 +1,28 @@
-%section
-  = render 'profile', profile: @profile
+%section.bg-light.py-4
+  .container.bg-white
+    = render 'profile', profile: @profile
 
-%section
-  .container.mt-5
-    .text-center
-      %p.font-weight-bold プロジェクト
-    .row
-      .col-md-4
-        .card
-          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
-          .card-body
-            %h5.card-title カード1
-            %p.card-text これはカード1のテキストです。
-      .col-md-4
-        .card
-          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
-          .card-body
-            %h5.card-title カード2
-            %p.card-text これはカード2のテキストです。
-      .col-md-4
-        .card
-          %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
-          .card-body
-            %h5.card-title カード3
-            %p.card-text これはカード3のテキストです.
+    %section
+      .row
+        .container.bg-white.mt-5
+          .text-center
+            %p.font-weight-bold プロジェクト
+          .row.mb-3
+            .col-md-4
+              .card
+                %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+                .card-body
+                  %h5.card-title カード1
+                  %p.card-text これはカード1のテキストです。
+            .col-md-4
+              .card
+                %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+                .card-body
+                  %h5.card-title カード2
+                  %p.card-text これはカード2のテキストです。
+            .col-md-4
+              .card
+                %img.card-img-top(src="https://via.placeholder.com/150" alt="サンプル画像")
+                .card-body
+                  %h5.card-title カード3
+                  %p.card-text これはカード3のテキストです.
