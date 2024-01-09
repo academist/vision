@@ -1,4 +1,4 @@
-%section
+%section.bg-white.no-gutters
   .row
     .col-md-8.text-center
       - sp_options = 'width: 168px; height: 168px; object-fit: cover;'
@@ -41,8 +41,8 @@
           - profile.research_publication_links.each do |research_publication_link|
             = link_to research_publication_link.url, '', class: 'text-dark text-decoration-none mb-2'
 
-%section
+%section.bg-white.no-gutters
   .row
-    .col.mb-3
+    .col.m-3
       %p.font-weight-bold.text-center= Vision::Profile.human_attribute_name(:vision)
       .lead= profile.vision
