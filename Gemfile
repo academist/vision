@@ -17,6 +17,7 @@ gemspec
 gem 'carrierwave'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'brakeman', require: false
