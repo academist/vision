@@ -30,7 +30,7 @@ FactoryBot.define do
 
     trait :with_sns_link do
       before(:create) do |profile|
-        profile.sns_links << build_list(:sns_link, 3)
+        profile.sns_links << build_list(:sns_link, 10)
       end
     end
 
