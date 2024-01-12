@@ -39,7 +39,8 @@
         .research-keyword.mb-3
           %p.font-weight-bold= Vision::ResearchPublicationLink.model_name.human
           - profile.research_publication_links.each do |research_publication_link|
-            = link_to research_publication_link.url, '', class: 'text-dark text-decoration-none mb-2'
+            .publication_link
+              = link_to research_publication_link.url, '', class: 'text-dark text-decoration-none mb-2'
 
 %section.bg-white.no-gutters
   .row
