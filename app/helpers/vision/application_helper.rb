@@ -8,6 +8,16 @@ module Vision
       end
     end
 
+    def regular_format(text)
+      sanitized_text = sanitize(text, tags: %w[a i b br], attributes: %w[href])
+      html_options = {
+        target: '_blank',
+        rel: 'noopener',
+        style: 'text-decoration: underline; overflow-wrap: anywhere; word-break: break-all;',
+      }
+      auto_link(simple_format(sanitized_text), html: html_options)
+    end
+
     # rubocop:disable Metrics/MethodLength
     def sns_icon_class(sns_link)
       sns_icons = {

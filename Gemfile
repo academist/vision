@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
+gem 'rails_autolink'
 
 group :development, :test do
   gem 'brakeman', require: false
