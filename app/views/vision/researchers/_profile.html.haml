@@ -45,5 +45,5 @@
               .publication_link
                 = link_to research_publication_link.url, '', class: 'text-dark text-decoration-none mb-2'
     .col.mb-3.mt-3
-      %p.font-weight-bold.text-left.h5.lead= Vision::Profile.human_attribute_name(:vision)
-      .text-break.ml-2.mr-2= regular_format(profile.vision)
+      %p.font-weight-bold.text-left.h5= Vision::Profile.human_attribute_name(:vision)
+      .text-break.ml-2.mr-2.lead= regular_format(profile.vision)
