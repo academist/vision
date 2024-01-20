@@ -1,6 +1,6 @@
 %section.bg-white
   .row.ml-1.mr-1
-    .col-md-8.text-center
+    .col-md-7.text-center
       - sp_options = 'width: 168px; height: 168px; object-fit: cover;'
       - pc_options = 'width: 330px; height: 330px; object-fit: cover;'
       .center-image.d-none.d-md-block.mb-3.mt-5
@@ -13,7 +13,7 @@
             - profile.sns_links.each do |sns_link|
               = sns_link_tag(sns_link)
 
-    .col-md-4.mb-3.mt-3
+    .col-md-5.mb-3.mt-3
       %p.h3.font-weight-bold= profile.name
 
       - if profile.affiliations.any?
