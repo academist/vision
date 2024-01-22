@@ -13,7 +13,7 @@ module Vision
       html_options = {
         target: '_blank',
         rel: 'noopener',
-        style: 'text-decoration: underline; overflow-wrap: anywhere; word-break: break-all;',
+        style: 'text-decoration: underline; overflow-wrap: anywhere; word-break: break-all;'
       }
       auto_link(simple_format(sanitized_text), html: html_options)
     end
