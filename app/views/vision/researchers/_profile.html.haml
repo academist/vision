@@ -1,19 +1,16 @@
 %section.bg-white
   .row.ml-1.mr-1
-    .col-md-7.text-center
-      - sp_options = 'width: 168px; height: 168px; object-fit: cover;'
-      - pc_options = 'width: 330px; height: 330px; object-fit: cover;'
-      .center-image.d-none.d-md-block.mb-3.mt-5
-        = image_tag profile.image_url, class: 'rounded-circle img-fluid', style: pc_options
-      .center-image.d-block.d-md-none.mb-3.mt-5
-        = image_tag profile.image_url, class: 'rounded-circle img-fluid', style: sp_options
+    .col-md-3.text-center
+      - options = 'width: 168px; height: 168px; object-fit: cover;'
+      .center-image.mb-3.mt-5
+        = image_tag profile.image_url, class: 'rounded-circle img-fluid', style: options
       .center-sns
         .sns_link.mb-3
           - if profile.sns_links.any?
             - profile.sns_links.each do |sns_link|
               = sns_link_tag(sns_link)
-
     .col-md-5.mb-3.mt-3
+    .col-md-4.mb-3.mt-3
       %p.h3.font-weight-bold= profile.name
 
       - if profile.affiliations.any?
