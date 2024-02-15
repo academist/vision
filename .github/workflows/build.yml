@@ -4,11 +4,14 @@ jobs:
   code_analysis:
     name: code_analysis
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: ['3.0']
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: ${{ matrix.ruby }}
       - name: cache vendor/bundle
         uses: actions/cache@v1
         with:
@@ -16,6 +19,10 @@ jobs:
           key: bundle-${{ hashFiles('**/Gemfile.lock') }}
       - name: bundle install
         run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - name: Display ruby version
+        run: ruby -v
+      - name: Display rails version
+        run: bundle exec rails -v
       - name: Run rubocop
         run: bundle exec rubocop
       - name: Run haml-lint
@@ -27,11 +34,17 @@ jobs:
   rspec:
     name: rspec
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: ['3.0']
+        rails: ['6_0', '6_1', '7_0', '7_1']
+    env:
+      BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: ${{ matrix.ruby }}
       - name: cache vendor/bundle
         uses: actions/cache@v1
         with:
@@ -39,5 +52,9 @@ jobs:
           key: bundle-${{ hashFiles('**/Gemfile.lock') }}
       - name: bundle install
         run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - name: Run rubocop
+      - name: Display ruby version
+        run: ruby -v
+      - name: Display rails version
+        run: bundle exec rails -v
+      - name: Run rspec
         run: bundle exec rspec
