@@ -44,9 +44,7 @@ RSpec.describe 'Vision::Researchers' do
       let(:vision_profile) { create(:vision_profile, user: user) }
 
       it 'raises ActionController::RoutingError' do
-        expect do
-          get_researcher_path
-        end.to raise_error(ActionController::RoutingError, 'Not Found')
+        expect { get_researcher_path }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
