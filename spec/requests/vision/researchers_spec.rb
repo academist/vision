@@ -9,25 +9,25 @@ RSpec.describe 'Vision::Researchers' do
     it { expect(response).to have_http_status(:ok) }
   end
 
-  describe 'GET /vision/researchers/:id' do
-    subject(:action) { get researcher_path(user_id) }
+  describe 'GET /vision/researchers/:handle' do
+    subject(:action) { get researcher_path(handle) }
 
-    context 'user_idが存在しないとき' do
-      let(:user_id) { 0 }
+    context 'handleが存在しないとき' do
+      let(:handle) { 'nonexistence' }
 
       it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
     end
 
     context 'vision_profileが存在しないとき' do
       let(:user) { create(:user) }
-      let(:user_id) { user.id }
+      let(:handle) { user.handle }
 
       it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
     end
 
     context 'vision_profileが非公開のとき' do
       let(:user) { create(:user) }
-      let(:user_id) { user.id }
+      let(:handle) { user.handle }
 
       before { create(:vision_profile, user: user, published: false) }
 
@@ -36,7 +36,7 @@ RSpec.describe 'Vision::Researchers' do
 
     context 'vision_profileが公開のとき' do
       let(:user) { create(:user) }
-      let(:user_id) { user.id }
+      let(:handle) { user.handle }
 
       before do
         create(:vision_profile, user: user, published: true)
