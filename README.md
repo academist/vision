@@ -20,6 +20,9 @@ Dummyアプリはtest/dummy以下で通常のRailsアプリケーションと同
 ```console
 cd test/dummy
 bundle
+bin/rails db:reset
+bin/rails db:schema:load
+bin/rails db:seed
 ```
 
 #### 起動
@@ -28,13 +31,15 @@ bundle
 http://localhost:3000/vision/researchers にアクセスすると、Visionエンジンのresearchers#indexが確認できます。
 
 ```console
-cd test/dummy
+cd spec/dummy
 bin/rails server
 ```
 
 #### テスト
 
-(TODO)
+```console
+bundle exec rspec
+```
 
 ## 貢献の仕方
 
