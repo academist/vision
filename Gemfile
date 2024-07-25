@@ -15,7 +15,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'carrierwave'
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 5.3.3'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'rails_autolink'
