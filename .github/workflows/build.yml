@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         ruby: ['3.0']
-        rails: ['6_0', '6_1', '7_0', '7_1']
+        rails: ['6_1', '7_0', '7_1']
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
