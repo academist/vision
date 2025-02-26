@@ -25,8 +25,9 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", '>= 6.0.0', '< 7.3'
+  spec.add_dependency "rails", '>= 6.0.0', '< 7.2'
   spec.add_dependency "haml-rails", "~> 2.0"
+  spec.add_dependency "concurrent-ruby", "1.3.4" # Rails7.0でのエラー対策
 
   spec.test_files = Dir["spec/**/*"]
 end
