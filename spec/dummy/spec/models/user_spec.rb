@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe User do
   describe 'associations' do
     it { is_expected.to have_one(:vision_profile).class_name('Vision::Profile').dependent(:destroy) }
+    it { is_expected.to have_many(:research_outputs).dependent(:destroy) }
   end
 
   describe 'dependent destroy' do
