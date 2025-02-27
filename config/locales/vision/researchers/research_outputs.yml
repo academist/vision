@@ -1,0 +1,26 @@
+ja:
+  vision:
+    researchers:
+      research_outputs:
+        category:
+          paper: 論文
+          book: 書籍
+          other: その他
+        review_status:
+          under_review: 審査中
+          peer_reviewed: 査読済
+          non_peer_reviewed: 査読なし
+          not_applicable: 非適用
+en:
+  vision:
+    researchers:
+      research_outputs:
+        category:
+          paper: Paper
+          book: Book
+          other: Other
+        review_status:
+          under_review: Under review
+          peer_reviewed: Peer reviewed
+          non_peer_reviewed: Non-peer reviewed
+          not_applicable: Not applicable

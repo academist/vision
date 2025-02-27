@@ -34,7 +34,7 @@ RSpec.describe 'Vision::Researchers' do
       it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
     end
 
-    context 'vision_profileが公開のとき' do
+    context 'research_outputが存在しないとき' do
       let(:user) { create(:user) }
       let(:handle) { user.handle }
 
@@ -44,6 +44,27 @@ RSpec.describe 'Vision::Researchers' do
       end
 
       it { expect(response).to have_http_status(:ok) }
+      it { expect(response.body).not_to include('Research output') }
+    end
+
+    context 'research_outputが存在するとき' do
+      let(:user) { create(:user) }
+      let(:handle) { user.handle }
+      let!(:research_outputs) { create_list(:research_output, 3, user: user) }
+
+      before do
+        create(:vision_profile, user: user, published: true)
+        action
+      end
+
+      it { expect(response).to have_http_status(:ok) }
+      it { expect(response.body).to include('Research output') }
+
+      it 'research_outputsが表示されていること' do
+        research_outputs.each do |research_output|
+          expect(response.body).to include(research_output.title)
+        end
+      end
     end
   end
 end

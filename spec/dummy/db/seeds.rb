@@ -15,7 +15,6 @@ FactoryBot.create(
 )
 FactoryBot.create_list(:research_output, 3, user: published_user)
 
-
 # vision_profile有り、published: false
 unpublished_user = FactoryBot.create(:user)
 FactoryBot.create(

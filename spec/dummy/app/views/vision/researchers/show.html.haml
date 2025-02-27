@@ -1,6 +1,7 @@
 %section.bg-light.py-4
   .container
     = render 'profile', profile: @user.vision_profile
+    = render 'research_outputs', research_outputs: @user.research_outputs.order(published_on: :desc)
 
     %section.bg-white.no-gutters
       .row
