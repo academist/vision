@@ -34,5 +34,15 @@ module Vision
       sns_icons[sns_link.link_type.to_sym]
     end
     # rubocop:enable Metrics/MethodLength
+
+    def research_output_category_label(research_output)
+      category_label = I18n.t("vision.researchers.research_outputs.category.#{research_output.category}")
+      if research_output.paper?
+        review_status = research_output.review_status
+        "#{category_label}(#{I18n.t("vision.researchers.research_outputs.review_status.#{review_status}")})"
+      else
+        category_label
+      end
+    end
   end
 end
