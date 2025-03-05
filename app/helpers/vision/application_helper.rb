@@ -44,5 +44,9 @@ module Vision
         category_label
       end
     end
+
+    def research_funding_funder_label(research_funding)
+      research_funding.funder || I18n.t("vision.researchers.research_fundings.category.#{research_funding.category}")
+    end
   end
 end

@@ -10,9 +10,9 @@
                 %th.border-right.small.col-4.col-sm-3.col-md-2
                   = l(research_output.published_on)
                 %td.col-8.col-sm-9.col-md-10
-                  %p.small.mb-1.text-muted= research_output_category_label(research_output)
+                  %p.small.mb-0.text-muted= research_output_category_label(research_output)
                   %h3.h5= link_to(research_output.title, research_output.url)
                   - if (authors = research_output.authors).present?
-                    %p.small.my-1.text-muted= authors
+                    %p.small.my-0.text-muted= authors
                   - if (description = research_output.description).present?
-                    %p.small.my-1.text-muted= description
+                    %p.small.my-0.text-muted= description
