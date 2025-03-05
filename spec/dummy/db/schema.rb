@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_26_000001) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_05_000001) do
+  create_table "research_fundings", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "funder"
+    t.integer "category", limit: 1, default: 0, null: false
+    t.integer "amount", default: 0, null: false
+    t.date "adopted_on", null: false
+    t.date "ended_on"
+    t.string "url"
+    t.string "research_topic"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_research_fundings_on_user_id"
+  end
+
   create_table "research_outputs", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "category", limit: 1, default: 0, null: false
@@ -97,5 +112,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_26_000001) do
     t.index ["profile_id", "order"], name: "vision_research_publication_links_index"
   end
 
+  add_foreign_key "research_fundings", "users"
   add_foreign_key "research_outputs", "users"
 end
