@@ -1,15 +1,14 @@
-class CreateResearchFundings < ActiveRecord::Migration[7.0]
+class CreateResearchOutputs < ActiveRecord::Migration[7.0]
   def change
-    create_table :research_fundings do |t|
-      t.string :name, null: false
-      t.string :funder
-      t.integer :category, null: false, default: 0, limit: 1
-      t.integer :amount, null: false, default: 0
-      t.date :adopted_on, null: false
-      t.date :ended_on
-      t.string :url
-      t.string :research_topic
+    create_table :research_outputs do |t|
       t.references :user, null: false, foreign_key: true
+      t.integer :category, null: false, default: 0, limit: 1
+      t.string :title, null: false
+      t.string :authors
+      t.date :published_on, null: false
+      t.integer :review_status, null: false, default: 0, limit: 1
+      t.text :description
+      t.string :url
 
       t.timestamps
     end
