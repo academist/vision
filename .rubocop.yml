@@ -9,9 +9,11 @@
 #
 # See https://docs.rubocop.org/rubocop/configuration
 
-require:
+plugins:
+  - rubocop-factory_bot
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 inherit_gem:
   rubocop-rails: config/default.yml
