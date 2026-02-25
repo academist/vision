@@ -15,23 +15,30 @@ RSpec.describe 'Vision::Researchers' do
     context 'handleが存在しないとき' do
       let(:handle) { 'nonexistence' }
 
-      it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
+      before { action }
+
+      it { expect(response).to have_http_status(:not_found) }
     end
 
     context 'vision_profileが存在しないとき' do
       let(:user) { create(:user) }
       let(:handle) { user.handle }
 
-      it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
+      before { action }
+
+      it { expect(response).to have_http_status(:not_found) }
     end
 
     context 'vision_profileが非公開のとき' do
       let(:user) { create(:user) }
       let(:handle) { user.handle }
 
-      before { create(:vision_profile, user: user, published: false) }
+      before do
+        create(:vision_profile, user: user, published: false)
+        action
+      end
 
-      it { expect { action }.to raise_error(ActiveRecord::RecordNotFound) }
+      it { expect(response).to have_http_status(:not_found) }
     end
 
     context 'research_output、research_fundingが存在しないとき' do
