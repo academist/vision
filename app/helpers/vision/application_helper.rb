@@ -18,7 +18,7 @@ module Vision
       auto_link(simple_format(sanitized_text), html: html_options)
     end
 
-    # rubocop:disable Metrics/MethodLength
+    # rubocop:disable-next Metrics/MethodLength
     def sns_icon_class(sns_link)
       sns_icons = {
         twitter: 'fab fa-twitter',
@@ -33,7 +33,6 @@ module Vision
       }
       sns_icons[sns_link.link_type.to_sym]
     end
-    # rubocop:enable Metrics/MethodLength
 
     def research_output_category_label(research_output)
       category_label = I18n.t("vision.researchers.research_outputs.category.#{research_output.category}")
