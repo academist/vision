@@ -18,8 +18,27 @@
         1104
       ],
       "note": "TODO"
+    },
+    {
+      "warning_type": "Unmaintained Dependency",
+      "warning_code": 120,
+      "fingerprint": "6b194a0dac63370a202c330659b8967d53c9cb6928725825f45dd110a7b04dc2",
+      "check_name": "EOLRails",
+      "message": "Support for Rails 8.0.5.1 ends on 2026-11-07",
+      "file": "Gemfile.lock",
+      "line": 267,
+      "link": "https://brakemanscanner.org/docs/warning_types/unmaintained_dependency/",
+      "code": null,
+      "render_path": null,
+      "location": null,
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        1104
+      ],
+      "note": "Approved exception for the approaching Rails 8.0 support deadline while maintaining Rails 7.2 and 8.0 compatibility. Revisit before 2026-11-07; do not disable the EOLRails check."
     }
   ],
-  "updated": "2023-07-23 08:53:21 +0900",
-  "brakeman_version": "6.0.1"
+  "updated": "2026-10-23",
+  "brakeman_version": "8.1.0"
 }
