@@ -33,7 +33,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-rspec_rails', require: false
-  gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3', '~> 2.1'
   gem 'factory_bot_rails'
   gem 'faker'
 end
