@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ['3.3']
+        ruby: ['3.4']
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
@@ -16,9 +16,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: vendor/bundle
-          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+          key: bundle-${{ runner.os }}-ruby-${{ matrix.ruby }}-${{ hashFiles('Gemfile', 'vision.gemspec', '**/Gemfile.lock') }}
       - name: bundle install
-        run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+        run: |
+          bundle config set --local path vendor/bundle
+          bundle check || bundle install --jobs=4 --retry=3
       - name: Display ruby version
         run: ruby -v
       - name: Display rails version
@@ -35,9 +37,10 @@ jobs:
     name: rspec
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        ruby: ['3.3']
-        rails: ['7_1', '7_2']
+        ruby: ['3.4', '4.0']
+        rails: ['7_2']
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
@@ -49,9 +52,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: vendor/bundle
-          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+          key: bundle-${{ runner.os }}-ruby-${{ matrix.ruby }}-rails-${{ matrix.rails }}-${{ hashFiles('Gemfile', 'vision.gemspec', 'gemfiles/*.gemfile', '**/Gemfile.lock') }}
       - name: bundle install
-        run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
+        run: |
+          bundle config set --local path vendor/bundle
+          bundle check || bundle install --jobs=4 --retry=3
       - name: Display ruby version
         run: ruby -v
       - name: Display rails version
