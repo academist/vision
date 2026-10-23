@@ -23,7 +23,7 @@ gem 'rails_autolink'
 group :development, :test do
   gem 'brakeman', require: false
   gem 'haml_lint', require: false
-  gem 'pry-byebug'
+  gem 'debug'
   gem 'pry-rails'
   gem 'puma'
   gem 'reek', require: false
