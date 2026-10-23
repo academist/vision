@@ -20,6 +20,7 @@ inherit_gem:
 
 AllCops:
   TargetRubyVersion: 3.3
+  TargetRailsVersion: 7.2
   NewCops: enable
   Exclude:
     - bin/*
@@ -46,5 +47,4 @@ Style/Documentation:
 RSpec/ContextWording:
   AllowedPatterns:
     - とき$
-
 
