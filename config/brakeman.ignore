@@ -21,8 +21,8 @@
     },
     {
       "warning_type": "Unmaintained Dependency",
-      "warning_code": 120,
-      "fingerprint": "6b194a0dac63370a202c330659b8967d53c9cb6928725825f45dd110a7b04dc2",
+      "warning_code": 122,
+      "fingerprint": "98b26f60d776fd41ee6f088c833725145be9aac2d7c5b33780241c273622db42",
       "check_name": "EOLRails",
       "message": "Support for Rails 8.0.5.1 ends on 2026-11-07",
       "file": "Gemfile.lock",
