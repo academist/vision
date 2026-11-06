@@ -18,8 +18,7 @@ module Vision
       auto_link(simple_format(sanitized_text), html: html_options)
     end
 
-    # rubocop:disable-next Metrics/MethodLength
-    def sns_icon_class(sns_link)
+    def sns_icon_class(sns_link) # rubocop:disable Metrics/MethodLength
       sns_icons = {
         twitter: 'fab fa-twitter',
         facebook: 'fab fa-facebook',

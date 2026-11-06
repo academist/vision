@@ -8,7 +8,7 @@ module Vision
       @user = User
               .joins(:vision_profile)
               .merge(Vision::Profile.where(published: true))
-              .find_by!(handle: params[:handle])
+              .find_by!(handle: params.expect(:handle))
     end
   end
 end
