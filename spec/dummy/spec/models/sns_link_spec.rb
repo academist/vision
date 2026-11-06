@@ -13,8 +13,12 @@ RSpec.describe SnsLink do
   end
 
   describe 'enums' do
-    # rubocop:disable Layout/LineLength
-    it { is_expected.to define_enum_for(:link_type).with_values(twitter: 0, facebook: 1, instagram: 2, youtube: 3, note: 4, linkedin: 5, researchmap: 6, homepage: 7, other: 8) }
-    # rubocop:enable Layout/LineLength
+    subject(:sns_link) { described_class.new }
+
+    it do
+      expect(sns_link).to define_enum_for(:link_type).with_values(
+        twitter: 0, facebook: 1, instagram: 2, youtube: 3, note: 4, linkedin: 5, researchmap: 6, homepage: 7, other: 8
+      )
+    end
   end
 end
