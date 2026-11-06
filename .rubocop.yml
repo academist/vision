@@ -27,6 +27,7 @@ AllCops:
     - db/schema.rb
     - db/migrate/*
     - vendor/**/*
+    - gemfiles/vendor/**/*
     - config/**/*
     - lib/tasks/*
     - vision.gemspec
