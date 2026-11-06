@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary     = "Summary of Vision."
   spec.description = "Description of Vision."
   spec.license     = "MIT"
+  spec.required_ruby_version = ">= 4.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -25,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", '>= 7.2.0', '< 8.1'
+  spec.add_dependency "rails", '>= 8.0.0', '< 8.2'
   spec.add_dependency "haml-rails", "~> 2.0"
 
   spec.test_files = Dir["spec/**/*"]
